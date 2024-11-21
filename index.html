@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shrimadh Ramayanam</title>
+  <style>
+    /* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Animated Header */
+    .header {
+      background: linear-gradient(135deg, #ff8c42, #ff3d68, #ff8c42);
+      background-size: 300% 300%;
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: gradientAnimation 10s infinite;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Hero Section with Background Video */
+    .hero {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      padding: 1rem;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .cta-button {
+      background: #ff8c42;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: white;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .cta-button:hover {
+      background: #ff3d68;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Plan Section */
+    .plan {
+      padding: 3rem 1rem;
+      background: #f9f9f9;
+      text-align: center;
+    }
+
+    .plan h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .plan-details {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .plan-details h3 {
+      margin-bottom: 1rem;
+      color: #ff8c42;
+    }
+
+    .plan-details ul {
+      padding-left: 1.5rem;
+    }
+
+    .plan-details ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-block {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .contact-block a {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.8rem 1.5rem;
+      max-width: 300px;
+      background: #ff8c42;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .contact-block a:hover {
+      background: #ff3d68;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .contact-block a {
+        max-width: 100%;
+      }
+    }
+
+    /* Bonus Section */
+    .bonus {
+      background: linear-gradient(145deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-top: 5px solid #4caf50;
+      border-bottom: 5px solid #4caf50;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .bonus h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .bonus p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .bonus-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .bonus-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      padding: 2rem;
+      text-align: center;
+      max-width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bonus-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .bonus-card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1rem;
+    }
+
+    .bonus-card h3 {
+      font-size: 1.5rem;
+      color: #4caf50;
+      margin-bottom: 0.5rem;
+    }
+
+    .bonus-card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .bonus h2 {
+        font-size: 2rem;
+      }
+
+      .bonus p {
+        font-size: 1rem;
+      }
+
+      .bonus-card {
+        max-width: 100%;
+        padding: 1.5rem;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-content p {
+      margin: 0.5rem 0;
+    }
+
+    .footer-content a {
+      color: #ff8c42;
+      text-decoration: none;
+    }
+
+    .footer-content a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>Shrimadh Ramayanam</h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop>
+      <source src="./video.mp4.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h1>Discover the Journey of Ramayanam</h1>
+    <p>1080p HD Videos | Dolby Vision Audio | Telugu & Tamil Episodes Available</p>
+    <a href="demo.html" class="cta-button">Watch Demo</a>
+  </section>
+
+  <!-- Plan Section -->
+  <section id="plan" class="plan">
+    <h2>Special Plan - ₹69 First Month</h2>
+    <div class="plan-details">
+      <h3>Plan Benefits:</h3>
+      <ul>
+        <li>Access to all Telugu & Tamil episodes of Shrimadh Ramayanam</li>
+        <li>1080p HD videos</li>
+        <li>Dolby Vision audio</li>
+        <li>Lifetime content access</li>
+        <li>Accessible via Telegram</li>
+      </ul>
+      <p style="margin-top: 1rem;">Renewal Price: ₹49 per month</p>
+    </div>
+    <div class="contact-block">
+      <a href="https://t.me/Sridharroyal">Contact Us for Telugu Episodes</a>
+      <a href="https://t.me/KiKiKi_Channel">Contact Us for Tamil Episodes</a>
+    </div>
+  </section>
+
+  <!-- Bonus Section -->
+  <section class="bonus">
+    <h2>🎁 Exclusive Bonus for Today's Purchasers</h2>
+    <p>Purchase today and unlock these incredible bonuses for free:</p>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <img src="./Picsart_24-11-21_16-45-43-132.jpg" alt="Mahabharat Icon">
+        <h3>Mahabharat Telugu</h3>
+        <p>All Episodes Available in Stunning Quality</p>
+      </div>
+      <div class="bonus-card">
+        <img src="./Picsart_24-11-21_16-46-42-998.jpg" alt="Hara Hara Mahadeva Icon">
+        <h3>Hara Hara Mahadeva</h3>
+        <p>Main Episodes to Enlighten Your Spiritual Journey</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Shrimadh Ramayanam. All Rights Reserved.</p>
+      <p>Contact us on <a href="https://telegram.org" target="_blank">Telegram</a> or <a href="https://instagram.com" target="_blank">Instagram</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
